@@ -12,7 +12,7 @@ interface Props {
 const MainBanner: FC<Props> = ({ className }) => {
   return (
     <div className={cn("mb-[30px]", className)}>
-      <div className="bg-[#4298b4] py-[40px] w-full flex md:text-center">
+      <div className="bg-secondary py-[40px] w-full flex md:text-center">
         <div className="max-w-[960px] px-3 text-white flex flex-col items-start gap-5 mx-[auto] md:items-center">
           <h1 className="text-[25px] font-extrabold md:text-[40px]">
             Психологические тесты, которые расскажут о тебе больше, чем ты
@@ -34,7 +34,7 @@ const MainBanner: FC<Props> = ({ className }) => {
       </div>
       <img
         src="https://www.16personalities.com/static/images/homepage/header-mountains-desktop.svg"
-        alt=""
+        alt="Banner"
       />
     </div>
   );
