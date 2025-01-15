@@ -15,7 +15,7 @@ interface Props {
 
 const TestResults: FC<Props> = ({ className, name, result, nextPage }) => {
   console.log(result);
-  console.log(result.strengths);
+  //   console.log(result.strengths);
   return (
     <div className={cn("mb-[30px]", className)}>
       <div className="w-[100%] h-[270px] mb-[50px] bg-secondary flex flex-col justify-center items-center gap-5 px-2 py-5 text-white">

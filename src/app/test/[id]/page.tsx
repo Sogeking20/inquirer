@@ -4,12 +4,12 @@ import { prisma } from "@/prisma/prisma-client";
 import { notFound } from "next/navigation";
 
 export default async function TestPage({
-  params: { id },
+  params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   const test = await prisma.test.findFirst({
-    where: { id: Number(id) },
+    where: { id: Number((await params).id) },
     include: {
       questions: {
         include: {
