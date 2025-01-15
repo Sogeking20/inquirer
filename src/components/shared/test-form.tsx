@@ -1,16 +1,16 @@
 "use client";
 
 import { FC, SetStateAction, useState } from "react";
-import { TestWithRelations } from "@/@types/prisma";
+import { TestWithRelations, ResultWithStrengths } from "@/@types/prisma";
 import TestBanner from "./test-banner";
 import TestQuestion from "./test-question";
 import TestResults from "./test-results";
-import { Result } from "@prisma/client";
+// import { ResultWithStrengths } from "@prisma/client";
 
 interface Props {
   className?: string;
   test: TestWithRelations;
-  result: Result;
+  result: ResultWithStrengths;
 }
 
 const TestForm: FC<Props> = ({ test, result }) => {

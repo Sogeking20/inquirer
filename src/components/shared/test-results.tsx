@@ -5,11 +5,12 @@ import { RotateCcw } from "lucide-react";
 import { Container } from "./container";
 import TestResultsItem from "./test-results-item";
 import { cn } from "@/lib/utils";
+import { ResultWithStrengths } from "@/@types/prisma";
 
 interface Props {
   className?: string;
   name: String;
-  result: Result;
+  result: ResultWithStrengths;
   nextPage: (name: string) => void;
 }
 
