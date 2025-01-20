@@ -64,10 +64,6 @@ const TestForm: FC<Props> = ({ test, result }) => {
   }, []);
 
   const onNext = () => {
-    if (steps + 1 >= test.questions.length) {
-      setPage("result");
-      return;
-    }
     setSteps(steps + 1);
     setAnswer(0);
 

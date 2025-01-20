@@ -46,6 +46,7 @@ const TestQuestion: FC<Props> = ({
           onClickVariant={onClickVariant}
           answer={answer}
           onNext={onNext}
+          nextPage={nextPage}
         />
       </Container>
       <TestQuestionsTimer />

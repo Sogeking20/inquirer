@@ -1,8 +1,7 @@
 import { FC } from "react";
 import TestQuestionGame from "./test-question-game";
+import TestQuestionsFinal from "./test-questions-final";
 import { QuestionWithAnswers } from "@/@types/prisma";
-import { useSession } from "next-auth/react";
-import TestQuestionsAuth from "./test-questions-auth";
 
 interface Props {
   step: number;
@@ -11,6 +10,7 @@ interface Props {
   onClickVariant: () => void;
   onNext: () => void;
   answer?: number;
+  nextPage: (name: string) => void;
 }
 
 const TestQuestionsForm: FC<Props> = ({
@@ -20,11 +20,10 @@ const TestQuestionsForm: FC<Props> = ({
   onClickVariant,
   onNext,
   answer,
+  nextPage,
 }) => {
-  const { data: session } = useSession();
-
-  if (step >= length && !session) {
-    return <TestQuestionsAuth />;
+  if (step >= length) {
+    return <TestQuestionsFinal nextPage={nextPage} />;
   }
   return (
     <TestQuestionGame
