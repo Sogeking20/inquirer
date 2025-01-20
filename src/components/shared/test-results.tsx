@@ -41,7 +41,7 @@ const TestResults: FC<Props> = ({ className, name, result, resetTest }) => {
           </p>
         </div>
         <div className="w-[100%] grid grid-cols-1 md:grid-cols-2 gap-3">
-          {result.strengths ? (
+          {result.strengths && result.strengths.length > 0 ? (
             <TestResultsItem
               name="Сильные стороны:"
               strengths={result.strengths}
