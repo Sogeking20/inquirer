@@ -11,21 +11,23 @@ interface Props {
   className?: string;
   name: String;
   result: ResultWithStrengths;
-  nextPage: (name: string) => void;
+  resetTest: () => void;
 }
 
-const TestResults: FC<Props> = ({ className, name, result, nextPage }) => {
+const TestResults: FC<Props> = ({ className, name, result, resetTest }) => {
   console.log(result);
   //   console.log(result.strengths);
   return (
     <div className={cn("mb-[30px]", className)}>
       <div className="w-[100%] h-[270px] mb-[50px] bg-secondary flex flex-col justify-center items-center gap-5 px-2 py-5 text-white">
-        <h1 className="text-[30px] sm:text-[34px] font-semibold">{name}</h1>
+        <h1 className="text-[30px] sm:text-[34px] font-semibold text-center">
+          {name}
+        </h1>
         <Button
           className="text-white border-white text-[16px] sm:text-[20px] flex gap-2 hover:bg-[#3d8aa4] hover:border-white"
           variant={"outline"}
           size={"lg"}
-          onClick={() => nextPage("quiz")}
+          onClick={() => resetTest()}
         >
           <RotateCcw />
           Пройти тест заново

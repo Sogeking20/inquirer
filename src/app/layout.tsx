@@ -3,6 +3,7 @@ import "./globals.css";
 import { Noto_Sans } from "next/font/google";
 import Header from "@/components/shared/header";
 import Footer from "@/components/shared/footer";
+import { Providers } from "@/components/shared/providers";
 
 const notoSans = Noto_Sans({ subsets: ["cyrillic"] });
 
@@ -19,11 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${notoSans.className}`}>
-        <main className="min-h-screen">
-          <Header />
-          {children}
-          <Footer />
-        </main>
+        <Providers>
+          <main className="min-h-screen">
+            <Header />
+            {children}
+            <Footer />
+          </main>
+        </Providers>
       </body>
     </html>
   );

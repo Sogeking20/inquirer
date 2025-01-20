@@ -1,4 +1,4 @@
-import { Test, Question, Result, Strengths } from "@prisma/client";
+import { Test, Question, Result, Strengths, Answer } from "@prisma/client";
 
 export type TestWithRelations = Test & {
   questions: Question[];
@@ -7,4 +7,8 @@ export type TestWithRelations = Test & {
 
 export type ResultWithStrengths = Result & {
   strengths: Strengths[];
+};
+
+export type QuestionWithAnswers = Question & {
+  answers: Answer[];
 };
